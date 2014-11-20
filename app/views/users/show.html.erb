@@ -1,0 +1,4 @@
+<h1><%= @current_user.name.split.first %>'s Venmo Score:</h1>
+<p>Total amount charged: $<%= @current_user.payment_total_value.round(2) %></p>
+<p>Time taken to complete charges: <%= @current_user.payment_total_time.round(2) %> minutes</p>
+<p>Response time: <strong><%= @current_user.venmo_score %></strong> minutes/dollar, over <%= @current_user.transaction_count %> transactions</p>

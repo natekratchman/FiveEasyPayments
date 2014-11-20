@@ -1,4 +1,0 @@
-FiveEasyPayments
-================
-
-hello world
