@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  skip_before_action :require_login, except: [:destroy]
   def new  
   end
 
@@ -15,6 +15,12 @@ class SessionsController < ApplicationController
     session[:token] = @venmo_response.credentials.token
 
     redirect_to root_path
+  end
+
+  def destroy
+    reset_session
+    flash.now[:notice]="You are now logged out, thank you for visiting!"
+    render :new
   end
 
   private

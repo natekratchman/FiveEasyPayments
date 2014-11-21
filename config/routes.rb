@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   get '/auth/venmo/callback/' => 'sessions#create'
 
+  get '/logout' => 'sessions#destroy'
   
 end
