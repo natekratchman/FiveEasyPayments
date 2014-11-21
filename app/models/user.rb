@@ -27,7 +27,8 @@ class User < ActiveRecord::Base
        end
     end
 
-    venmo_score = self.calculate_score(settled_charge_value, settled_charge_time)
+    ratios = self.get_ratios(settled_charge_value, pending_charge_value, uncharged_value, settled_charge_time, pending_charge_time, uncharged_time)
+    venmo_score = self.calculate_score(ratios, settled_count, pending_count, uncharged_count)
 
     self.update(settled_charge_value: settled_charge_value, 
                 pending_charge_value: pending_charge_value, 
@@ -38,6 +39,9 @@ class User < ActiveRecord::Base
                 settled_count: settled_count,
                 pending_count: pending_count,
                 uncharged_count: uncharged_count,
+                settled_ratio: ratios[:settled],
+                pending_ratio: ratios[:pending],
+                uncharged_ratio: ratios[:uncharged], 
                 last_transaction_id: last_transaction_id, 
                 venmo_score: venmo_score)
   end
@@ -57,8 +61,28 @@ class User < ActiveRecord::Base
     time += time_to_payment
   end
 
-  def calculate_score(settled_charge_value, settled_charge_time)
-    (settled_charge_time/settled_charge_value).round(2)
+  def get_ratios(settled_charge_value, pending_charge_value, uncharged_value, settled_charge_time, pending_charge_time, uncharged_time)
+    
+    settled_ratio = calculate_ratio(settled_charge_time,settled_charge_value)
+    pending_ratio = calculate_ratio(pending_charge_time,pending_charge_value)
+    uncharged_ratio = calculate_ratio(uncharged_time,uncharged_value)
+    ratios = {settled: settled_ratio,
+              pending: pending_ratio,
+              uncharged: uncharged_ratio
+    }
+  end
+
+  def calculate_ratio(time,value)
+    if value==0
+      0
+    else
+      time/value
+    end
+  end
+
+  def calculate_score(ratios, settled_count, pending_count, uncharged_count)
+    total_count = [settled_count,pending_count,uncharged_count].sum
+    venmo_score = ratios.values.sum/total_count
   end
 
   def self.login_or_create(auth_hash)

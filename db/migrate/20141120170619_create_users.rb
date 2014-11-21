@@ -8,12 +8,15 @@ class CreateUsers < ActiveRecord::Migration
       t.integer   :settled_count
       t.float     :settled_charge_value
       t.integer   :settled_charge_time
+      t.float     :settled_ratio
       t.integer   :pending_count
       t.float     :pending_charge_value
       t.integer   :pending_charge_time
+      t.float     :pending_ratio
       t.integer   :uncharged_count
       t.float     :uncharged_value
       t.integer   :uncharged_time
+      t.float     :uncharged_ratio
 
       t.timestamps
     end

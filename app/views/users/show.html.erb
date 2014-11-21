@@ -1,6 +1,16 @@
-<h1><%= @current_user.name.split.first %>'s Venmo Score:</h1>
-<p>Total amount charged: $<%= @current_user.settled_charge_value.round(2) %></p>
-<p>Time taken to complete charges: <%= @current_user.settled_charge_time.round(2) %> minutes</p>
-<p>Response time: <strong><%= @current_user.venmo_score %></strong> minutes/dollar, over <%= @current_user.transaction_count %> transactions</p>
+<h1><%= @current_user.name.split.first %>'s Venmo Score:<%= @current_user.venmo_score %></h1>
 
-<h1><%= @current_user.name.split.first %>'s Venmo Score:</h1>
+<h2>Settled Score:</h2>
+<p>Total amount settled: $<%= @current_user.settled_charge_value.round(2) %></p>
+<p>Time taken to complete charges: <%= @current_user.settled_charge_time.round(2) %> minutes</p>
+<p>Response time: <strong><%= @current_user.settled_ratio.round(2) %></strong> minutes/dollar, over <%= @current_user.settled_count %> transactions</p>
+
+<h2>Pending Score:</h2>
+<p>Total amount pending: $<%= @current_user.pending_charge_value.round(2) %></p>
+<p>Time since charges originated: <%= @current_user.pending_charge_time.round(2) %> minutes</p>
+<p>Response time: <strong><%= @current_user.pending_ratio.round(2) %></strong> minutes/dollar, over <%= @current_user.pending_count %> transactions</p>
+
+<h2>Uncharged Score:</h2>
+<p>Total amount paid without being charged: $<%= @current_user.uncharged_value.round(2) %></p>
+<p>Time taken to complete charges: <%= @current_user.uncharged_time.round(2) %> minutes</p>
+<p>Response time: <strong><%= @current_user.uncharged_ratio.round(2) %></strong> minutes/dollar, over <%= @current_user.uncharged_count %> transactions</p>
