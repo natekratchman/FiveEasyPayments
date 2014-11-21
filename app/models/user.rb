@@ -5,13 +5,13 @@ class User < ActiveRecord::Base
   end
 
   def update_payment_totals(payment_info)
-    payment_total_value, payment_total_time, transaction_count, last_transaction_id, i = Array.new(5){0}
+    settled_charge_value, settled_charge_time, transaction_count, last_transaction_id, i = Array.new(5){0}
 
     payment_info["data"].each do |transaction|
       if transaction["status"] == "settled" && transaction["action"] == "charge" && transaction["actor"]["display_name"] != self.name
 
-        payment_total_value = increment_payment_total_value(transaction, payment_total_value)
-        payment_total_time = increment_payment_total_time(transaction, payment_total_time)
+        settled_charge_value = increment_settled_charge_value(transaction, settled_charge_value)
+        settled_charge_time = increment_settled_charge_time(transaction, settled_charge_time)
     
         if i == 0
           last_transaction_id = transaction["id"]
@@ -24,19 +24,19 @@ class User < ActiveRecord::Base
        end
     end
 
-    venmo_score = self.calculate_score(payment_total_value, payment_total_time)
-    self.update(payment_total_value: payment_total_value, payment_total_time: payment_total_time, last_transaction_id: last_transaction_id, venmo_score: venmo_score, transaction_count: transaction_count)
+    venmo_score = self.calculate_score(settled_charge_value, settled_charge_time)
+    self.update(settled_charge_value: settled_charge_value, settled_charge_time: settled_charge_time, last_transaction_id: last_transaction_id, venmo_score: venmo_score, transaction_count: transaction_count)
   end
 
-  def increment_payment_total_value(transaction, payment_total_value)
-    payment_total_value += transaction["amount"]
+  def increment_settled_charge_value(transaction, settled_charge_value)
+    settled_charge_value += transaction["amount"]
   end
 
-  def increment_payment_total_time(transaction, payment_total_time)
+  def increment_settled_charge_time(transaction, settled_charge_time)
     t1 = Time.parse(transaction["date_created"])
     t2 = Time.parse(transaction["date_completed"])
     time_to_payment = (t2 - t1)/60
-    payment_total_time += time_to_payment
+    settled_charge_time += time_to_payment
   end
 
   def find_pending
@@ -44,8 +44,8 @@ class User < ActiveRecord::Base
     #return total time for those payments
   end
 
-  def calculate_score(payment_total_value, payment_total_time)
-    (payment_total_time/payment_total_value).round(2)
+  def calculate_score(settled_charge_value, settled_charge_time)
+    (settled_charge_time/settled_charge_value).round(2)
   end
 
   def self.login_or_create(auth_hash)
