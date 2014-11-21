@@ -5,11 +5,7 @@ class User < ActiveRecord::Base
   end
 
   def update_payment_totals(payment_info)
-    payment_total_value = 0
-    payment_total_time = 0
-    transaction_count = 0
-    last_transaction_id = 0
-    i = 0
+    payment_total_value, payment_total_time, transaction_count, last_transaction_id, i = Array.new(5){0}
 
     payment_info["data"].each do |transaction|
       if transaction["status"] == "settled" && transaction["action"] == "charge" && transaction["actor"]["display_name"] != self.name
@@ -23,7 +19,7 @@ class User < ActiveRecord::Base
         last_transaction_id = transaction["id"] if i == 0
 
         transaction_count += 1
-        i=1
+        i = 1
       end
     end
 
@@ -32,7 +28,6 @@ class User < ActiveRecord::Base
   end
 
   def calculate_score(payment_total_value, payment_total_time)
-    # binding.pry
     (payment_total_time/payment_total_value).round(2)
   end
 
