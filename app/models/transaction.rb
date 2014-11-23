@@ -40,8 +40,11 @@ class Transaction
   end
 
   def self.calculate_score(ratios, settled_count, pending_count, uncharged_count)
+    base_score = 100
     total_count = [settled_count, pending_count, uncharged_count].sum
-    venmo_score = ratios.values.sum/total_count
+    total_count = 100 if total_count > 100
+
+    venmo_score = base_score - total_count + ratios.values.sum
   end
 
 end

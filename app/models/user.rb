@@ -1,23 +1,21 @@
 class User < ActiveRecord::Base
 
   def self.call_lucas
-    #production - waition on venmo gosh darnit
+    ### PRODUCTION - waiting on venmo gosh darnit
     # JSON.parse(open("https://api.venmo.com/v1/payments?access_token=#{session[:token]}&limit=1000").read)
-    #testing
-    JSON.parse(IO.read("app/controllers/seedhash.rb"))
+
+    ### TESTING
+    JSON.parse(IO.read("app/controllers/kana_hash.rb"))
+    # JSON.parse(IO.read("app/controllers/ben_hash.rb"))
   end
 
   def parse_info(payment_info)
-      self.update_payment_totals(payment_info) if Transaction.new_transaction?(payment_info, self.last_transaction_id)
+    self.update_payment_totals(payment_info) if Transaction.new_transaction?(payment_info, self.last_transaction_id)
   end
 
-
   def update_payment_totals(payment_info)
-
     settled_value, pending_value, uncharged_value, settled_time, pending_time, uncharged_time, settled_count, pending_count, uncharged_count, last_transaction_id, i = Array.new(11){0}
-
     last_transaction_id = payment_info["data"].first["id"]
-    
     transaction_type = {
       settled: 'transaction["action"] == "charge" && transaction["actor"]["display_name"] != self.name && transaction["status"] == "settled"',
       pending: 'transaction["action"] == "charge" && transaction["actor"]["display_name"] != self.name && transaction["status"] == "pending"',
@@ -63,9 +61,7 @@ class User < ActiveRecord::Base
       last_transaction_id: last_transaction_id, 
       venmo_score: venmo_score
     )
-
   end
-
 
   def self.login_or_create(auth_hash)
     find_by(venmo_uid: auth_hash.uid) || create(name: auth_hash.extra.raw_info.display_name, venmo_uid: auth_hash.uid)

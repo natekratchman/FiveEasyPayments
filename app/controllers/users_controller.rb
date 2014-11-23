@@ -1,17 +1,13 @@
 class UsersController < ApplicationController
 
   def show
-    
-
-    # Production
-    # @current_user = current_user
+    ### PRODUCTION
     # payment_info = User.call_lucas
+    # current_user.parse_info(payment_info)
 
-    # Development/Test
-
+    ### TESTING
     payment_info = User.call_lucas
-    @current_user = User.find_by(name: "Kana") || User.create(name: "Kana")
-
+    @current_user = User.find_by(name: payment_info["name"]) || User.create(name: payment_info["name"])
     @current_user.parse_info(payment_info)
   end
 end
