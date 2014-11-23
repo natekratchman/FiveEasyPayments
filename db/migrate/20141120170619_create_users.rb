@@ -6,12 +6,12 @@ class CreateUsers < ActiveRecord::Migration
       t.integer   :venmo_score
       t.integer   :last_transaction_id
       t.integer   :settled_count
-      t.float     :settled_charge_value
-      t.integer   :settled_charge_time
+      t.float     :settled_value
+      t.integer   :settled_time
       t.float     :settled_ratio
       t.integer   :pending_count
-      t.float     :pending_charge_value
-      t.integer   :pending_charge_time
+      t.float     :pending_value
+      t.integer   :pending_time
       t.float     :pending_ratio
       t.integer   :uncharged_count
       t.float     :uncharged_value
