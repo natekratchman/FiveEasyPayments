@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
     # Development/Test
     payment_info = JSON.parse(IO.read("app/controllers/seedhash.rb"))
-    @current_user = User.create(name: "Kana")
+    @current_user = User.find_by(name: "Kana") || User.create(name: "Kana")
 
     @current_user.parse_info(payment_info)
   end
