@@ -8,9 +8,7 @@ class User < ActiveRecord::Base
   end
 
   def parse_info(payment_info)
-    # if new transaction
-      self.update_payment_totals(payment_info)
-    # end
+      self.update_payment_totals(payment_info) if Transaction.new_transaction?(payment_info, self.last_transaction_id)
   end
 
 

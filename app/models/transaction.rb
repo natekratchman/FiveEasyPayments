@@ -1,5 +1,9 @@
 class Transaction
 
+  def self.new_transaction?(payment_info, last_transaction_id)
+    payment_info["data"].first["id"] != last_transaction_id
+  end
+
   def self.increment_value(transaction, value)
     value += transaction["amount"]
   end
