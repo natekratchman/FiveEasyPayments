@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20141120170619) do
     t.string   "name"
     t.integer  "venmo_uid"
     t.integer  "venmo_score"
-    t.integer  "last_transaction_id"
+    t.string   "last_transaction_id"
     t.integer  "settled_count"
     t.float    "settled_value"
     t.integer  "settled_time"
