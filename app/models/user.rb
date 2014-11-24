@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   def self.call_lucas
-    ### PRODUCTION - waiting on venmo gosh darnit
+    ### PRODUCTION - waiting on venmo gosh darnit!
     # JSON.parse(open("https://api.venmo.com/v1/payments?access_token=#{session[:token]}&limit=1000").read)
 
     ### TESTING
