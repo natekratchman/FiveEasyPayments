@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
     # JSON.parse(open("https://api.venmo.com/v1/payments?access_token=#{session[:token]}&limit=1000").read)
 
     ### TESTING
-    JSON.parse(IO.read("app/controllers/kana_hash.rb"))
+    JSON.parse(IO.read("/controllers/kana_hash.rb"))
     # JSON.parse(IO.read("app/controllers/ben_hash.rb"))
   end
 
