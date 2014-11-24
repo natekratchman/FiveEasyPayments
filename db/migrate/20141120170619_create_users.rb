@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :name
       t.integer   :venmo_uid
       t.integer   :venmo_score
-      t.integer   :last_transaction_id
+      t.bigint    :last_transaction_id
       t.integer   :settled_count
       t.float     :settled_value
       t.integer   :settled_time
