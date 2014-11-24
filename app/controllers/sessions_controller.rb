@@ -4,16 +4,23 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @venmo_response = request.env['omniauth.auth']
-
-    @venmo_uid = @venmo_response.uid
-    @venmo_display_name = @venmo_response.extra.raw_info.display_name
     
-    user = User.login_or_create(@venmo_response)
+    ### PRODUCTION
+    # @venmo_response = request.env['omniauth.auth']
 
-    session[:user_id] = user.id
-    session[:token] = @venmo_response.credentials.token
+    # @venmo_uid = @venmo_response.uid
+    # @venmo_display_name = @venmo_response.extra.raw_info.display_name
+    
+    # user = User.login_or_create(@venmo_response)
 
+    # session[:user_id] = user.id
+    # session[:token] = @venmo_response.credentials.token
+
+    # redirect_to root_path
+    
+
+    ### TESTING
+    session[:user_id] = User.first.id
     redirect_to root_path
   end
 
@@ -21,11 +28,6 @@ class SessionsController < ApplicationController
     reset_session
     flash.now[:notice]="You are now logged out, thank you for visiting!"
     render :new
-  end
-
-  private
-  def login
-    User.find() || User.create
   end
 
 end
