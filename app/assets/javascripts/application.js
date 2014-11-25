@@ -20,6 +20,8 @@
 //= require jquery-1.10.2
 //= require main
 //= require respond.min
+//= require Chart.min
+//= require d3.v3.min
 
 //= require lib/grid
 //= require lib/jquery.backgroundvideo
