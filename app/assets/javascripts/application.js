@@ -17,7 +17,6 @@
 //= require html5shiv
 //= require main
 //
-//= require respond.min
 //= require Chart.min
 //= require d3.v3.min
 //
