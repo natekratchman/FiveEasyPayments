@@ -9,7 +9,7 @@
 
 
 <body data-spy="scroll" data-target=".navbar-collapse">
-<%#= notice %>
+<%= notice %>
 
 <!-- BEGIN OUTTER -->
 <div class="outter">
@@ -39,7 +39,7 @@
                   <% if logged_in? %>
                     <li><%= link_to "LOGOUT", logout_path, class: "sscroll" %></li>
                   <% else %>
-                    <li><%= link_to "LOGIN", login_path, class: "sscroll" %></li>
+                    <li><%= link_to "MY SCORE", login_path, class: "sscroll" %></li>
                   <% end %>
               </ul>
           </div>
