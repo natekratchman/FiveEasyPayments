@@ -85,6 +85,7 @@
 <p>Time taken to complete charges: <%= @current_user.uncharged_time.round(2) %> minutes</p>
 <p>Response time: <strong><%= @current_user.uncharged_ratio.round(2) %></strong> minutes/dollar, over <%= @current_user.uncharged_count %> transactions</p>
 
+<div id='chart'></div>
 </div>
 <!-- END CONTENT SECTION -->
 </div>

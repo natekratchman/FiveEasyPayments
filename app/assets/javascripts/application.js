@@ -17,6 +17,10 @@
 //= require html5shiv
 //= require main
 //
+//= require respond.min
+//= require Chart.min
+//= require d3.v3.min
+//
 //= require lib/grid
 //= require lib/jquery.backgroundvideo
 //= require lib/jquery.backstretch.min

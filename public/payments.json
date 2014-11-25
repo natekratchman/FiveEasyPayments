@@ -1,0 +1,27 @@
+{
+"name": "",
+ "children": [
+  {
+   "name": "settled",
+   "children": [
+    {"name": "Nate", "size": 2},
+    {"name": "Steven", "size": 3},
+    {"name": "Ben", "size": 1},
+    {"name": "Carly", "size": 1}
+   ]
+  },
+  {
+   "name": "pending",
+   "children": [
+    {"name": "Jack", "size": 1},
+    {"name": "Mom", "size": 2}
+   ]
+  },
+  {
+   "name": "uncharged",
+   "children": [
+    {"name": "Kina", "size": 3}
+   ]
+  }
+]
+}
