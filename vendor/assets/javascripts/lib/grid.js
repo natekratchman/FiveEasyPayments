@@ -186,9 +186,10 @@ var Grid = (function() {
 			'msTransition' : 'MSTransitionEnd',
 			'transition' : 'transitionend'
 		},
-		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+		// transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
 		// support for csstransitions
-		support = Modernizr.csstransitions,
+		// support = Modernizr.csstransitions,
+		support = false,
 		// default settings
 		settings = {
 			minHeight : 500,
