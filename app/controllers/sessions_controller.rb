@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, except: [:destroy]
-  def new  
+  def login  
   end
 
   def create
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
   def destroy
     reset_session
     flash.now[:notice]="You are now logged out, thank you for visiting!"
-    render :new
+    render :login
   end
 
 end

@@ -12,4 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
+ *= require bootstrap-theme
+ *= require style-light
+ *= require light-green
+ *= require lib/font-awesome
+ *= require lib/animate
+ *= require lib/costumizefont
+ *= require lib/og-component
+ *= require lib/venobox
+ *= require lib/zocial
  */

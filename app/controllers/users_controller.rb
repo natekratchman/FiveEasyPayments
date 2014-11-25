@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
-  def show
+  skip_before_action :require_login, only: [:about]
+  
+  def home
     ### PRODUCTION
     # payment_info = User.call_lucas
     # current_user.parse_info(payment_info)
@@ -9,6 +11,9 @@ class UsersController < ApplicationController
     payment_info = User.call_lucas
     @current_user = User.find_by(name: payment_info["name"]) || User.create(name: payment_info["name"])
     @current_user.parse_info(payment_info)
+  end
+
+  def about
   end
 
   def error
