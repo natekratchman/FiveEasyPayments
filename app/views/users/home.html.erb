@@ -1,4 +1,4 @@
-<!-- BEGIN SLIDER ONE -->
+BEGIN HERO -->
 <div class="home-wrapper" id="top">
     <div class="content-home-wrapper text-center">
         <div class="header-center fade-in">
@@ -9,64 +9,88 @@
     </div>
     <div class="fullfilter"></div>
     <div><%= image_tag("scrooge-mcduck2.png", class: "home-image") %></div>
+<!-- END HERO -->
 
-<!-- BEGIN CONTENT SECTION -->
+<!-- BEGIN CONTENT  -->
 <div class="section-outter">
-  <!-- BEGIN ABOUT  -->
   <section id="about">
       <div class="section-wrapper">
-          <div class="section-title">
-              <!-- <h2 class="title animatez" data-effect="fadeInDown">ABOUT</h2> -->
-              <!-- <h4 class="subtitle animatez" data-effect="fadeInUp">We are an -->
-                  <!-- <span class="main-color">awkward</span>&nbsp;winning random design</h4> -->
-          </div>
+          <!-- BEGIN VENMO SCORE -->
           <div class="section-inner">
-              
-              <!-- BEGIN CHART 1 -->
-              <div class="container">
-                <div class="section-title">
-                    <h2 class="title animatez" data-effect="fadeInDown">Your Transaction Breakdown</h2>
-                    <h4 class="subtitle animatez" data-effect="fadeInUp">
-                        <span class="main-color">Click Around</span></h4>
-                </div>
-                <div id='chart' class="animatez" data-effect="fadeInUp"></div>
+            <div class="container">
+              <div class="section-title">
+                  <h2 class="title animatez" data-effect="fadeInDown">YOUR VENMO SCORE</h2>
+                  <h4 class="title animatez" data-effect="fadeInUp"><span class="main-color">A+</span></h4>
               </div>
-              <!-- END CHART 1 -->
+              <div id='' class="animatez" data-effect="fadeInUp"></div>
+            </div>
           </div>
+          <!-- END VENMO SCORE -->
+
           <div class="spacer big"></div>
-          <div class="section-fill bg-parallax bg-about" id="custom-bg-about">
-              <div class="fill-wrapper">
-                  <div class="section-title">
-                      <h1><%= @current_user.name.split.first %>'s Venmo Score: <%= @current_user.venmo_score %></h1>
 
-                      <h2>Settled Score:</h2>
-                      <p>Total amount settled: $<%= @current_user.settled_value.round(2) %></p>
-                      <p>Time taken to complete charges: <%= @current_user.settled_time.round(2) %> minutes</p>
-                      <p>Response time: <strong><%= @current_user.settled_ratio.round(2) %></strong> minutes/dollar, over <%= @current_user.settled_count %> transactions</p>
-
-                      <h2>Pending Score:</h2>
-                      <p>Total amount pending: $<%= @current_user.pending_value.round(2) %></p>
-                      <p>Time since charges originated: <%= @current_user.pending_time.round(2) %> minutes</p>
-                      <p>Response time: <strong><%= @current_user.pending_ratio.round(2) %></strong> minutes/dollar, over <%= @current_user.pending_count %> transactions</p>
-
-                      <h2>Uncharged Score:</h2>
-                      <p>Total amount paid without being charged: $<%= @current_user.uncharged_value.round(2) %></p>
-                      <p>Time taken to complete charges: <%= @current_user.uncharged_time.round(2) %> minutes</p>
-                      <p>Response time: <strong><%= @current_user.uncharged_ratio.round(2) %></strong> minutes/dollar, over <%= @current_user.uncharged_count %> transactions</p>
-                  </div>
+          <!-- BEGIN SUNBURST -->
+          <div class="section-inner">
+            <div class="container">
+              <div class="section-title">
+                  <h2 class="title animatez" data-effect="fadeInDown">Transaction Breakdown</h2>
+                  <h4 class="subtitle animatez" data-effect="fadeInUp"><span class="main-color">Click Around</span></h4>
               </div>
+              <div id='chart' class="animatez" data-effect="fadeInUp"></div>
+            </div>
           </div>
-      </div>
-  </section>
-  <!-- END ABOUT -->
+          <!-- END SUNBURST -->
 
+          <div class="spacer big"></div>
+
+          <!-- BEGIN SETTLED CALLOUT (blue section) -->
+          <section id="settled">
+              <div class="section-wrapper" id="custom-bg-about">
+                  <div class="section-title animated fadeInDown">
+                      <%= tag("h2", class: "title white animatez", data: {effect: 'fadeInDown'} ) %> Your response time for completing charges is <span class="main-color"><%= @current_user.settled_ratio.round(2) %></span> minutes/dollar</h2>
+                      <h4 class="subtitle animatez white" data-effect="fadeInUp">In total, that's <span class="main-color"><%= @current_user.settled_time.round(2) %></span> minutes you've kept your friends waiting.</h4>
+                  </div>
+          <div class="spacer big"></div>
+              </div>
+          </section>
+          <!-- END SETTLED CALLOUT -->
+
+          <!-- BEGIN TOTAL PAID CIRCLES -->
+          <div class="section-inner">
+            <div class="container">
+            <div class="spacer big"></div>
+              <div class="section-title">
+                  <h2 class="title animatez" data-effect="fadeInDown">Total Paid</h2>
+                  <h4 class="subtitle animatez" data-effect="fadeInUp"><span class="main-color">Charged vs. Uncharged</span></h4>
+              </div>
+              <div style="height: 200px;" id='' class="animatez" data-effect="fadeInUp">Circles go here!</div>
+            </div>
+          </div>
+          <!-- END TOTAL PAID CIRCLES -->
+
+          <!-- BEGIN PENDING CALLOUT (blue section) -->
+          <section id="settled">
+              <div class="section-wrapper" id="custom-bg-about">
+                  <div class="section-title animated fadeInDown">
+                      <%= tag("h2", class: "title white animatez", data: {effect: 'fadeInDown'} ) %> You have <span class="main-color">$<%= @current_user.pending_value.round(2) %></span> of outstanding charges.</h2>
+                      <h4 class="subtitle animatez white" data-effect="fadeInUp">It's already been <span class="main-color"><%= @current_user.pending_time.round(2) %></span> minutes. What're you waiting for??</h4>
+                  </div>
+          <div class="spacer big"></div>
+              </div>
+          </section>
+          <!-- END PENDING CALLOUT -->
+
+    </div>
+  </section>
 </div>
+
+<!-- END CONTENT -->
 
 <!-- BEGIN MADE WITH LOVE -->
 <div class="section-fill bg-parallax bg-about">
     <div style="padding: 50px">
         <div class="section-title">
-          <h2>Made with <span class="glyphicons glyphicons-heart-empty">love</span> 
+          <h2>Made with <span class="">♥</span> 
             at <a href="http://flatironschool.com" target="_blank">Flatiron</a></h2>
         </div>
     </div>
@@ -75,4 +99,22 @@
 
 <!-- END CONTENT SECTION -->
 </div>
-<!-- END SLIDER -->
+<!-- END SLIDER
+
+
+<h1><%#= @current_user.name.split.first %>'s Venmo Score: <%#= @current_user.venmo_score %></h1>
+
+<h2>Settled Score:</h2>
+<p>Total amount settled: $<%#= @current_user.settled_value.round(2) %></p>
+<p>Time taken to complete charges: <%#= @current_user.settled_time.round(2) %> minutes</p>
+<p>Response time: <strong><%#= @current_user.settled_ratio.round(2) %></strong> minutes/dollar, over <%#= @current_user.settled_count %> transactions</p>
+
+<!-- <h2>Pending Score:</h2>
+<p>Total amount pending: $<%#= @current_user.pending_value.round(2) %></p>
+<p>Time since charges originated: <%#= @current_user.pending_time.round(2) %> minutes</p>
+<p>Response time: <strong><%#= @current_user.pending_ratio.round(2) %></strong> minutes/dollar, over <%#= @current_user.pending_count %> transactions</p>
+
+<h2>Uncharged Score:</h2>
+<p>Total amount paid without being charged: $<%#= @current_user.uncharged_value.round(2) %></p>
+<p>Time taken to complete charges: <%#= @current_user.uncharged_time.round(2) %> minutes</p>
+<p>Response time: <strong><%#= @current_user.uncharged_ratio.round(2) %></strong> minutes/dollar, over <%#= @current_user.uncharged_count %> transactions</p>
