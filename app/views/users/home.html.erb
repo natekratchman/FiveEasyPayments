@@ -62,15 +62,13 @@ BEGIN HERO -->
               <p hidden=true id="uncharged_value"><%= @current_user.uncharged_value.round(2) %></p>
               <p hidden=true id="settled_value"><%= @current_user.settled_value.round(2) %></p>
               <div id="custom-circles" class="row">
-                <div id="total_paid_circle_settled" class="animatez col-md-4" data-effect="fadeInUp">
-                  <h3>Amount you've paid to complete charges by friends</h3>
+                <div id="total_paid_circle_settled" class="animatez col-md-4" data-effect="fadeInLeft">
                 </div>
                 <div class="section-title col-md-4 custom-top-padding">
                 <h2 class="title animatez" data-effect="fadeInDown">Total Paid</h2>
                 <h4 class="subtitle animatez" data-effect="fadeInUp"><span class="main-color">Charged vs. Uncharged</span></h4>
               </div>
-                <div id="total_paid_circle_uncharged" class="animatez col-md-4" data-effect="fadeInUp">
-                  <h3>Amount you've paid without having to be charged</h3>
+                <div id="total_paid_circle_uncharged" class="animatez col-md-4" data-effect="fadeInRight">
                 </div>
               </div>
             </div>
