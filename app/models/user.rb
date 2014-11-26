@@ -5,12 +5,14 @@ class User < ActiveRecord::Base
     # JSON.parse(open("https://api.venmo.com/v1/payments?access_token=#{session[:token]}&limit=1000").read)
 
     ### TESTING
-    JSON.parse(IO.read("app/test_data/kana_data.json"))
+    # JSON.parse(IO.read("app/test_data/kana_data.json"))
     # JSON.parse(IO.read("app/test_data/ben_data.json"))
+    JSON.parse(IO.read("app/test_data/nate_data.json"))
   end
 
   def parse_info(payment_info)
     self.update_payment_totals(payment_info) #if Transaction.new_transaction?(payment_info, self.last_transaction_id)
+    # note: should put new_transaction? back in place, once PaymentHash.add_to_payment_json (below) has been abstracted out of User model
   end
 
   def update_payment_totals(payment_info)
