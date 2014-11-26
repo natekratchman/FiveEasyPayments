@@ -5,31 +5,71 @@
       "name": "settled",
       "children": [
         {
-          "name": "Eitan Rosenberg",
+          "name": "Benjamin Gross",
           "children": [
             {
-              "name": "Internet - November",
-              "amount": 15.28,
+              "name": "for Electric bill",
+              "amount": 31.33,
               "size": 1
             },
             {
-              "name": "Con Ed - November",
-              "amount": 57,
+              "name": "for Electric bill",
+              "amount": 31.33,
               "size": 1
             },
             {
-              "name": "Electricity - Oct",
-              "amount": 50.39,
+              "name": "for gas bill",
+              "amount": 21.5,
               "size": 1
             },
             {
-              "name": "Internet - Oct",
-              "amount": 31.87,
+              "name": "for gas bill",
+              "amount": 21.5,
               "size": 1
             },
             {
-              "name": "Con Ed / Aug 14",
-              "amount": 51.3,
+              "name": "rent",
+              "amount": 825,
+              "size": 1
+            },
+            {
+              "name": "for electricity",
+              "amount": 31,
+              "size": 1
+            },
+            {
+              "name": "for electricity",
+              "amount": 31,
+              "size": 1
+            },
+            {
+              "name": "for gas fee",
+              "amount": 13.45,
+              "size": 1
+            },
+            {
+              "name": "for gas fee",
+              "amount": 13.45,
+              "size": 1
+            },
+            {
+              "name": "second half of security deposit",
+              "amount": 825,
+              "size": 1
+            },
+            {
+              "name": "for Electric bill",
+              "amount": 49,
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Leo Trudel",
+          "children": [
+            {
+              "name": "Twc",
+              "amount": 56.34,
               "size": 1
             }
           ]
@@ -39,52 +79,32 @@
     {
       "name": "pending",
       "children": [
-
+        {
+          "name": "Kana Abe",
+          "children": [
+            {
+              "name": "App testing",
+              "amount": 0.01,
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Nate Kratchman",
+          "children": [
+            {
+              "name": "for testing!",
+              "amount": 0.01,
+              "size": 1
+            }
+          ]
+        }
       ]
     },
     {
       "name": "uncharged",
       "children": [
-        {
-          "name": "Benjamin Hochron",
-          "children": [
-            {
-              "name": "Ping Pong!",
-              "amount": 10,
-              "size": 1
-            }
-          ]
-        },
-        {
-          "name": "Elana Reinholtz",
-          "children": [
-            {
-              "name": "BBQ!!!",
-              "amount": 20,
-              "size": 1
-            }
-          ]
-        },
-        {
-          "name": "William Miner",
-          "children": [
-            {
-              "name": "for September reimburse",
-              "amount": 1400,
-              "size": 1
-            }
-          ]
-        },
-        {
-          "name": "Matt Green",
-          "children": [
-            {
-              "name": "The honorable General Tso",
-              "amount": 12,
-              "size": 1
-            }
-          ]
-        }
+
       ]
     }
   ]

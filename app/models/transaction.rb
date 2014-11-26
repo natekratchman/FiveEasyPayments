@@ -39,12 +39,13 @@ class Transaction
     end
   end
 
-  def self.calculate_score(ratios, settled_count, pending_count, uncharged_count)
-    base_score = 100
-    total_count = [settled_count, pending_count, uncharged_count].sum
-    total_count = 100 if total_count > 100
-
-    venmo_score = base_score - total_count + ratios.values.sum
+  def self.calculate_score(settled_value, pending_value, uncharged_count, settled_ratio, user_settled_count)
+    settled_score = ((settled_value-User.minimum("settled_value"))/(User.maximum("settled_value")-User.minimum("settled_value")))* 20
+    pending_score = (1-(pending_value-User.minimum("pending_value")/(User.maximum("pending_value")-User.minimum("pending_value"))))* 15
+    uncharged_score = (uncharged_count-User.minimum("uncharged_count").to_f/(User.maximum("uncharged_count")-User.minimum("uncharged_count")))*15
+    payback_score = ((settled_ratio-User.minimum("settled_ratio"))/(User.maximum("settled_ratio")-User.minimum("settled_ratio")))* 25
+    transaction_score = ((user_settled_count-User.minimum("settled_count")).to_f/(User.maximum("settled_count")-User.minimum("settled_count")))* 20
+    venmo_score = settled_score + pending_score + uncharged_score + payback_score + transaction_score + 5
   end
 
 end
