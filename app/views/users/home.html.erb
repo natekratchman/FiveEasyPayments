@@ -83,7 +83,7 @@ BEGIN HERO -->
               <div class="section-wrapper" id="custom-bg-about">
                   <div class="section-title animated fadeInDown">
                       <%= tag("h2", class: "title white animatez", data: {effect: 'fadeInDown'} ) %> You have <span class="main-color">$<%= @current_user.pending_value.round(2) %></span> of outstanding charges.</h2>
-                      <h4 class="subtitle animatez white" data-effect="fadeInUp">It's already been <span class="main-color"><%= @current_user.pending_time.round(2) %></span> minutes. What're you waiting for??</h4>
+                      <h4 class="subtitle animatez white" data-effect="fadeInUp">It's already been <span id="minutes" class="main-color"><%= @current_user.pending_time.to_i %></span> minutes and <span id="seconds" class="main-color">0</span> seconds. What're you waiting for??</h4>
                   </div>
           <div class="spacer big"></div>
               </div>

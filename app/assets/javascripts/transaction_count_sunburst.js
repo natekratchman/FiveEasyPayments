@@ -59,7 +59,6 @@ $(document).ready(function(){
     .append("g")
     .on("mouseover", function(d) {
           tooltip.html(function() {
-              //var name = format_name(d);
               return d["name"];
           });
           return tooltip.transition()
@@ -77,18 +76,6 @@ $(document).ready(function(){
   .attr("d", arc)
   .style("fill", function(d) { return color(d.name); })
   .on("click", click);
-  
-  var text = g.append("text")
-    .attr("x", 8)
-    .attr("dy", 28)
-    // .append("textPath")
-    //   .attr("xlink:href", function (d,i) { return "#" + d.name; })
-    //   .text(function (d,i) { return d.name; });
-    // .attr("x", function(d) { return y(d.y); })
-    // .attr("dx", "6") // margin
-    // .attr("dy", ".35em") // vertical-align
-    // .attr("font-family","sans-serif")
-    // .text(function(d){return d.name});
 
   function mouseover() {
   div.transition()
@@ -110,7 +97,6 @@ $(document).ready(function(){
  text.attr("transform", function(d) { return "rotate(" + computeTextRotation(d) + ")"; });
 
   function click(d) {
-  // fade out all text elements
     text.transition().attr("opacity", 0);
     
     path.transition()
