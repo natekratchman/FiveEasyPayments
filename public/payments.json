@@ -1,27 +1,60 @@
 {
-"name": "",
- "children": [
-  {
-   "name": "settled",
-   "children": [
-    {"name": "Nate", "size": 2},
-    {"name": "Steven", "size": 3},
-    {"name": "Ben", "size": 1},
-    {"name": "Carly", "size": 1}
-   ]
-  },
-  {
-   "name": "pending",
-   "children": [
-    {"name": "Jack", "size": 1},
-    {"name": "Mom", "size": 2}
-   ]
-  },
-  {
-   "name": "uncharged",
-   "children": [
-    {"name": "Kina", "size": 3}
-   ]
-  }
-]
+  "name": "",
+  "children": [
+    {
+      "name": "settled",
+      "children": [
+        {
+          "name": "Jen Kim",
+          "children": [
+            {
+              "name": "ConEd ($81.02)",
+              "amount": 40.51,
+              "size": 1
+            },
+            {
+              "name": "for ConEd\n Total bill: $99.78",
+              "amount": 49.89,
+              "size": 1
+            },
+            {
+              "name": "Light! (aka con ed)",
+              "amount": 62.17,
+              "size": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pending",
+      "children": [
+        {
+          "name": "Kina Abe",
+          "children": [
+            {
+              "name": "160 massageand dinner 281 aladdin 69 kingspa for 3 minus cake 28",
+              "amount": 241,
+              "size": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "uncharged",
+      "children": [
+        {
+          "name": "Kina Abe",
+          "children": [
+            {
+              "name": "Tip",
+              "amount": 3.5,
+              "size": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

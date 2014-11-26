@@ -22,19 +22,28 @@ class User < ActiveRecord::Base
       uncharged: 'transaction["action"] == "pay" && transaction["actor"]["display_name"] == self.name'
     }
 
+    payments = {"name"=>"","children"=>[
+      {"name"=>"settled","children"=>[]},
+      {"name"=>"pending","children"=>[]},
+      {"name"=>"uncharged","children"=>[]},
+    ]} #Payment JSON setup
+
     payment_info["data"].each do |transaction|
       if eval(transaction_type[:settled])
         settled_value = Transaction.increment_value(transaction, settled_value)
         settled_time = Transaction.increment_time(transaction, settled_time)
         settled_count += 1
+        payments = PaymentHash.add_to_payment_json(transaction,payments,"settled")
       elsif eval(transaction_type[:pending])
         pending_value = Transaction.increment_value(transaction, pending_value)
         pending_time = Transaction.increment_time(transaction, pending_time)
         pending_count += 1
+        payments = PaymentHash.add_to_payment_json(transaction,payments,"pending")
       elsif eval(transaction_type[:uncharged])
         uncharged_value = Transaction.increment_value(transaction, uncharged_value)
         uncharged_time = Transaction.increment_time(transaction, uncharged_time)
         uncharged_count += 1
+        payments = PaymentHash.add_to_payment_json(transaction,payments,"uncharged")
       end
     end
 
@@ -61,6 +70,9 @@ class User < ActiveRecord::Base
       last_transaction_id: last_transaction_id, 
       venmo_score: venmo_score
     )
+
+    PaymentHash.write_hash_to_json(payments)
+
   end
 
   def self.login_or_create(auth_hash)
