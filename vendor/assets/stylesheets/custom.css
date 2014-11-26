@@ -1,7 +1,17 @@
 #custom-bg-about {
   background-image: url(bg-about.jpg);
 }
-
 #custom-bg-static {
   background-image: url(bg-about.jpg);
+}
+#custom-circles {
+}
+.custom-float-left {
+  float: left;
+}
+.custom-float-right {
+  float: right;
+}
+.custom-top-padding {
+  padding-top: 14%;
 }

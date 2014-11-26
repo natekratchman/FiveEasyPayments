@@ -31,10 +31,10 @@ $(document).ready(function(){
     		var uncharged_pixels = 150;
     	}
     	
-    	var str = '<p>Amount that people have asked you for:</p><br><svg width="320" height="320"><circle cx=160 cy=160 r="'+settled_pixels+'" stroke="#e0c0c0" stroke-width="4" fill="#d94e4e" /><text style="text-anchor: middle" x="160" y="165" font-family="sans-serif" font-size="20px" fill="white">$'+settled_value+'</text></svg>';
+    	var str = '<svg width="320" height="320"><circle cx=160 cy=160 r="'+settled_pixels+'" stroke="#e0c0c0" stroke-width="4" fill="#d94e4e" /><text style="text-anchor: middle" x="160" y="165" font-family="sans-serif" font-size="20px" fill="white">$'+settled_value+'</text></svg>';
 			$( "#total_paid_circle_settled" ).append(str);
 
-			var stp = '<p>What you immediately paid off:</p></br><svg width="320" height="320"><circle cx=160 cy=160 r="'+uncharged_pixels+'" stroke="#bfd6ba" stroke-width="4" fill="#64a657" /><text style="text-anchor: middle" x="160" y="165" font-family="sans-serif" font-size="20px" fill="white">$'+uncharged_value+'</text></svg>';
+			var stp = '<svg width="320" height="320"><circle cx=160 cy=160 r="'+uncharged_pixels+'" stroke="#bfd6ba" stroke-width="4" fill="#64a657" /><text style="text-anchor: middle" x="160" y="165" font-family="sans-serif" font-size="20px" fill="white">$'+uncharged_value+'</text></svg>';
 			$( "#total_paid_circle_uncharged" ).append(stp);
 			
 	});
