@@ -77,6 +77,36 @@ class User < ActiveRecord::Base
 
   end
 
+  def getLetterGrade(score)
+    if score = 100
+      'A+'
+    elsif score >= 94
+      'A'
+    elsif score >= 90
+      'A-'
+    elsif score >= 87
+      'B+'
+    elsif score >= 83
+      'B'
+    elsif score >= 80
+      'B-'
+    elsif score >= 77
+      'C+'
+    elsif score >= 73
+      'C'
+    elsif score >= 70
+      'C-'
+    elsif score >= 67
+      'D+'
+    elsif score >= 63
+      'D'
+    elsif score >= 60
+      'D-'
+    else
+      'F'
+    end
+  end
+
   def self.login_or_create(auth_hash)
     find_by(venmo_uid: auth_hash.uid) || create(name: auth_hash.extra.raw_info.display_name, venmo_uid: auth_hash.uid)
   end
