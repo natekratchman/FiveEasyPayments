@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
     counts = [settled_count, pending_count, uncharged_count]
 
     ratios = Transaction.get_ratios(*values, *times)
-    venmo_score = Transaction.calculate_score(ratios, *counts)
+    venmo_score = Transaction.calculate_score(settled_value, pending_value, uncharged_count, settled_ratio, settled_count)
 
     self.update(
       settled_value: settled_value, 
