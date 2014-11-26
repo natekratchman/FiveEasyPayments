@@ -71,20 +71,23 @@
 <h1><%= @current_user.name.split.first %>'s Venmo Score: <%= @current_user.venmo_score %></h1>
 
 <h2>Settled Score:</h2>
-<p>Total amount settled: $<%= @current_user.settled_value.round(2) %></p>
+<p>Total amount settled: $<span id="settled_value"><%= @current_user.settled_value.round(2) %></span></p>
 <p>Time taken to complete charges: <%= @current_user.settled_time.round(2) %> minutes</p>
 <p>Response time: <strong><%= @current_user.settled_ratio.round(2) %></strong> minutes/dollar, over <%= @current_user.settled_count %> transactions</p>
 
 <h2>Pending Score:</h2>
-<p>Total amount pending: $<%= @current_user.pending_value.round(2) %></p>
+<p>Total amount pending: $<span id="pending_value"><%= @current_user.pending_value.round(2) %></span></p>
 <p>Time since charges originated: <%= @current_user.pending_time.round(2) %> minutes</p>
 <p>Response time: <strong><%= @current_user.pending_ratio.round(2) %></strong> minutes/dollar, over <%= @current_user.pending_count %> transactions</p>
 
 <h2>Uncharged Score:</h2>
-<p>Total amount paid without being charged: $<%= @current_user.uncharged_value.round(2) %></p>
+<p>Total amount paid without being charged: $<span id="uncharged_value"><%= @current_user.uncharged_value.round(2) %></span></p>
 <p>Time taken to complete charges: <%= @current_user.uncharged_time.round(2) %> minutes</p>
 <p>Response time: <strong><%= @current_user.uncharged_ratio.round(2) %></strong> minutes/dollar, over <%= @current_user.uncharged_count %> transactions</p>
 
-<div id='chart'></div>
+
+Total Transaction with breakdown of friends involved:
+</br>
+<div id="chart"></div>
 </div>
 <!-- END SLIDER ONE -->
