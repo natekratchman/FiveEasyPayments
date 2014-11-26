@@ -19,6 +19,7 @@
 //
 //= require Chart.min
 //= require d3.v3.min
+//= require tipsy
 //
 //= require lib/grid
 //= require lib/jquery.backgroundvideo

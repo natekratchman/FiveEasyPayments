@@ -34,7 +34,13 @@ $(document).ready(function(){
     .style("opacity", 0);
   
   // ----- START LOOP FOR EACH SECTION --- // 
-  d3.json("payments.json", function(error, root) {
+  var json;
+  if (window.location.pathname == '/') {
+    json = "payments.json";
+  }else{
+    json ="login_data.json";
+  }
+  d3.json(json, function(error, root) {
     var nodes = partition.nodes({children: root});
     var path = svg.selectAll("path")
         .data(partition.nodes(root))
