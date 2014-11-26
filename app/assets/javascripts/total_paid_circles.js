@@ -1,6 +1,11 @@
 $(document).ready(function(){
-
-	$.getJSON("payments.json")
+  var json;
+  if (window.location.pathname == '/') {
+    json = "payments.json";
+  }else{
+    json ="login_data.json";
+  }
+	$.getJSON(json)
     .done(function(payment){
     	var payments = payment;
   		

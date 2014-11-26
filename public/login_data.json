@@ -1,0 +1,61 @@
+{
+  "name": "",
+  "children": [
+    {
+      "name": "settled",
+      "children": [
+        {
+          "name": "Eitan Rosenberg",
+          "children": [
+            {
+              "name": "Internet - November",
+              "amount": 15.28,
+              "size": 1
+            },
+            {
+              "name": "Con Ed - November",
+              "amount": 57,
+              "size": 1
+            },
+            {
+              "name": "Electricity - Oct",
+              "amount": 50.39,
+              "size": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pending",
+      "children": [
+
+      ]
+    },
+    {
+      "name": "uncharged",
+      "children": [
+        {
+          "name": "Benjamin Hochron",
+          "children": [
+            {
+              "name": "Ping Pong!",
+              "amount": 10,
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Elana Reinholtz",
+          "children": [
+            {
+              "name": "BBQ!!!",
+              "amount": 20,
+              "size": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
