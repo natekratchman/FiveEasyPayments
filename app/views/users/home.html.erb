@@ -2,16 +2,13 @@
 <div class="home-wrapper" id="top">
     <div class="content-home-wrapper text-center">
         <div class="header-center fade-in">
-            <h1>FiveEasyPayments</h1>
-            <p>tagline tagline tagline tagline tagline tagline tagline</p>
+            <h1>Five Easy Payments</h1>
+            <p>Your Venmo Credit Score</p>
             <p><a class="sscroll slider-more" href="#about"><i class="fa fa-angle-down"></i></a></p>
         </div>
     </div>
     <div class="fullfilter"></div>
-    
-    <!-- NEEDS ATTENTION -->
-    <div class="home-image" data-src="bg-static.jpg"></div>
-    <!--  -->
+    <div><%= image_tag("scrooge-mcduck2.png", class: "home-image") %></div>
 
 <!-- BEGIN CONTENT SECTION -->
 <div class="section-outter">
@@ -19,48 +16,43 @@
   <section id="about">
       <div class="section-wrapper">
           <div class="section-title">
-              <h2 class="title animatez" data-effect="fadeInDown">ABOUT</h2>
-              <h4 class="subtitle animatez" data-effect="fadeInUp">We are an
-                  <span class="main-color">awkward</span>&nbsp;winning random design</h4>
+              <!-- <h2 class="title animatez" data-effect="fadeInDown">ABOUT</h2> -->
+              <!-- <h4 class="subtitle animatez" data-effect="fadeInUp">We are an -->
+                  <!-- <span class="main-color">awkward</span>&nbsp;winning random design</h4> -->
           </div>
-          <hr class="title-break">
           <div class="section-inner">
+              
+              <!-- BEGIN CHART 1 -->
               <div class="container">
-                  <div class="row">
-                      <div class="col-sm-4 mg-sm animatez" data-effect="fadeInUp">
-                          <i class="fa fa-headphones fa-5x main-color"></i>
-                          <h3>
-                              <strong>Good Display</strong>
-                          </h3>
-                          <p>Sed blandit augue vitae augue scelerisque bibendum. Vivamus sit amet libero turpis, non venenatis urna. In blandit, odio convallis suscipit venenatis</p>
-                      </div>
-                      <div class="col-sm-4 mg-sm animatez delay one" data-effect="fadeInUp">
-                          <i class="fa fa-hdd-o fa-5x main-color"></i>
-                          <h3>
-                              <strong>Better Storage</strong>
-                          </h3>
-                          <p>Sed blandit augue vitae augue scelerisque bibendum. Vivamus sit amet libero turpis, non venenatis urna. In blandit, odio convallis suscipit venenatis</p>
-                      </div>
-                      <div class="col-sm-4 mg-sm animatez delay two" data-effect="fadeInUp">
-                          <i class="fa fa-trash-o fa-5x main-color"></i>
-                          <h3>
-                              <strong>Recycle Bin</strong>
-                          </h3>
-                          <p>Sed blandit augue vitae augue scelerisque bibendum. Vivamus sit amet libero turpis, non venenatis urna. In blandit, odio convallis suscipit venenatis</p>
-                      </div>
-                  </div>
+                <div class="section-title">
+                    <h2 class="title animatez" data-effect="fadeInDown">Your Transaction Breakdown</h2>
+                    <h4 class="subtitle animatez" data-effect="fadeInUp">
+                        <span class="main-color">Click Around</span></h4>
+                </div>
+                <div id='chart' class="animatez" data-effect="fadeInUp"></div>
               </div>
+              <!-- END CHART 1 -->
           </div>
           <div class="spacer big"></div>
-          <div class="section-fill bg-parallax bg-about" style="background:url('images/bg-about.jpg');">
+          <div class="section-fill bg-parallax bg-about" id="custom-bg-about">
               <div class="fill-wrapper">
                   <div class="section-title">
-                      <h2 class="title white animatez" data-effect="fadeInDown">DESIGNED WITH SIMPLICITY</h2>
-                      <h4 class="subtitle animatez" data-effect="fadeInUp">
-                          <span class="main-color">Yet Packed Full Of Cutting-edge Technology</span>
-                      </h4>
-                      <div class="spacer medium"></div>
-                      <a href="javascript:;" class="btn-outline white animatez" data-effect="fadeIn">LEARN MORE ABOUT RINDU&nbsp;&nbsp;&rarr;</a>
+                      <h1><%= @current_user.name.split.first %>'s Venmo Score: <%= @current_user.venmo_score %></h1>
+
+                      <h2>Settled Score:</h2>
+                      <p>Total amount settled: $<%= @current_user.settled_value.round(2) %></p>
+                      <p>Time taken to complete charges: <%= @current_user.settled_time.round(2) %> minutes</p>
+                      <p>Response time: <strong><%= @current_user.settled_ratio.round(2) %></strong> minutes/dollar, over <%= @current_user.settled_count %> transactions</p>
+
+                      <h2>Pending Score:</h2>
+                      <p>Total amount pending: $<%= @current_user.pending_value.round(2) %></p>
+                      <p>Time since charges originated: <%= @current_user.pending_time.round(2) %> minutes</p>
+                      <p>Response time: <strong><%= @current_user.pending_ratio.round(2) %></strong> minutes/dollar, over <%= @current_user.pending_count %> transactions</p>
+
+                      <h2>Uncharged Score:</h2>
+                      <p>Total amount paid without being charged: $<%= @current_user.uncharged_value.round(2) %></p>
+                      <p>Time taken to complete charges: <%= @current_user.uncharged_time.round(2) %> minutes</p>
+                      <p>Response time: <strong><%= @current_user.uncharged_ratio.round(2) %></strong> minutes/dollar, over <%= @current_user.uncharged_count %> transactions</p>
                   </div>
               </div>
           </div>
@@ -90,4 +82,4 @@ Total Transaction with breakdown of friends involved:
 </br>
 <div id="chart"></div>
 </div>
-<!-- END SLIDER ONE -->
+<!-- END SLIDER -->

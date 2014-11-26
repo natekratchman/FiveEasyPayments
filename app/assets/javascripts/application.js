@@ -10,19 +10,16 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
+//= require jquery-1.10.2
 //= require_tree .
-
+//
 //= require bootstrap
 //= require html5shiv
-//= require jquery-1.10.2
 //= require main
-//= require respond.min
+//
 //= require Chart.min
 //= require d3.v3.min
-
+//
 //= require lib/grid
 //= require lib/jquery.backgroundvideo
 //= require lib/jquery.backstretch.min
@@ -36,7 +33,6 @@
 //= require lib/jquery.superslides.min
 //= require lib/masonry.pkgd.min
 //= require lib/mediaelement.min
-//= require lib/modernizr.custom
 //= require lib/venobox.min
 //= require lib/waypoints
 //= require lib/waypoints.min
