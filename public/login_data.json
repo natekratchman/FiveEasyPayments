@@ -2,10 +2,10 @@
   "name": "",
   "children": [
     {
-      "name": "settled",
+      "name": "Settled",
       "children": [
         {
-          "name": "Eitan Rosenberg",
+          "name": "Neil deGrasse Tyson",
           "children": [
             {
               "name": "Internet - November",
@@ -13,13 +13,33 @@
               "size": 1
             },
             {
-              "name": "Con Ed - November",
-              "amount": 57,
+              "name": "Con Ed - winter is coming",
+              "amount": 128.07,
               "size": 1
             },
             {
-              "name": "Electricity - Oct",
-              "amount": 50.39,
+              "name": "Internet - Oct",
+              "amount": 15.28,
+              "size": 1
+            },
+            {
+              "name": "Con Ed - Oct",
+              "amount": 57.12,
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Bill Nye",
+          "children": [
+            {
+              "name": "Whiskey night",
+              "amount": 42,
+              "size": 1
+            },
+            {
+              "name": "Materials for Dry Ice Demonstration",
+              "amount": 30,
               "size": 1
             }
           ]
@@ -27,16 +47,40 @@
       ]
     },
     {
-      "name": "pending",
+      "name": "Pending",
       "children": [
-
+        {
+          "name": "Bill Murray",
+          "children": [
+            {
+              "name": "You know what you did...",
+              "amount": 100,
+              "size": 1
+            }
+          ]
+        }
       ]
     },
     {
-      "name": "uncharged",
+      "name": "Uncharged",
       "children": [
         {
-          "name": "Benjamin Hochron",
+          "name": "Richard Dawkins",
+          "children": [
+            {
+              "name": "Thank you!",
+              "amount": 20,
+              "size": 1
+            },
+            {
+              "name": "Thanks again. Live saver.",
+              "amount": 40,
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Elana Reinholtz",
           "children": [
             {
               "name": "Ping Pong!",
@@ -46,11 +90,11 @@
           ]
         },
         {
-          "name": "Elana Reinholtz",
+          "name": "Pea Tear Gryphon",
           "children": [
             {
-              "name": "BBQ!!!",
-              "amount": 20,
+              "name": "Dinner",
+              "amount": 31,
               "size": 1
             }
           ]

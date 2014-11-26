@@ -25,7 +25,6 @@ $(document).ready(function(){
     		small_value = settled_value;
     		big_value = uncharged_value;
     	}
-        //debugger;
     	var ratio = big_value/100;
 
     	if(bigger == "settled"){
@@ -35,7 +34,6 @@ $(document).ready(function(){
     		var settled_pixels = settled_value/ratio+25;
     		var uncharged_pixels = 150;
     	}
-    	//debugger;
     	var str = '<svg width="320" height="320"><circle cx=160 cy=160 r="'+settled_pixels+'" stroke="#e0c0c0" stroke-width="4" fill="#d94e4e" original-title="Amount paid to friends who charged you" id="settled_circle"/><text style="text-anchor: middle" x="160" y="165" font-family="sans-serif" font-size="20px" fill="white">$'+settled_value+'</text></svg>';
 			$( "#total_paid_circle_settled" ).append(str);
 
