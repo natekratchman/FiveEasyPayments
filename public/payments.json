@@ -5,11 +5,21 @@
       "name": "settled",
       "children": [
         {
-          "name": "Leo Trudel",
+          "name": "Jen Kim",
           "children": [
             {
-              "name": "Twc",
-              "amount": 56.34,
+              "name": "ConEd ($81.02)",
+              "amount": 40.51,
+              "size": 1
+            },
+            {
+              "name": "for ConEd\n Total bill: $99.78",
+              "amount": 49.89,
+              "size": 1
+            },
+            {
+              "name": "Light! (aka con ed)",
+              "amount": 62.17,
               "size": 1
             }
           ]
@@ -20,21 +30,11 @@
       "name": "pending",
       "children": [
         {
-          "name": "Kana Abe",
+          "name": "Kina Abe",
           "children": [
             {
-              "name": "App testing",
-              "amount": 0.01,
-              "size": 1
-            }
-          ]
-        },
-        {
-          "name": "Nate Kratchman",
-          "children": [
-            {
-              "name": "for testing!",
-              "amount": 0.01,
+              "name": "160 massageand dinner 281 aladdin 69 kingspa for 3 minus cake 28",
+              "amount": 241,
               "size": 1
             }
           ]
@@ -45,11 +45,11 @@
       "name": "uncharged",
       "children": [
         {
-          "name": "Leo Trudel",
+          "name": "Kina Abe",
           "children": [
             {
-              "name": "burrito visions",
-              "amount": 11,
+              "name": "Tip",
+              "amount": 3.5,
               "size": 1
             }
           ]
