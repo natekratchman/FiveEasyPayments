@@ -5,66 +5,6 @@
       "name": "settled",
       "children": [
         {
-          "name": "Benjamin Gross",
-          "children": [
-            {
-              "name": "for Electric bill",
-              "amount": 31.33,
-              "size": 1
-            },
-            {
-              "name": "for Electric bill",
-              "amount": 31.33,
-              "size": 1
-            },
-            {
-              "name": "for gas bill",
-              "amount": 21.5,
-              "size": 1
-            },
-            {
-              "name": "for gas bill",
-              "amount": 21.5,
-              "size": 1
-            },
-            {
-              "name": "rent",
-              "amount": 825,
-              "size": 1
-            },
-            {
-              "name": "for electricity",
-              "amount": 31,
-              "size": 1
-            },
-            {
-              "name": "for electricity",
-              "amount": 31,
-              "size": 1
-            },
-            {
-              "name": "for gas fee",
-              "amount": 13.45,
-              "size": 1
-            },
-            {
-              "name": "for gas fee",
-              "amount": 13.45,
-              "size": 1
-            },
-            {
-              "name": "second half of security deposit",
-              "amount": 825,
-              "size": 1
-            },
-            {
-              "name": "for Electric bill",
-              "amount": 49,
-              "size": 1
-            }
-          ]
-        },
-        {
           "name": "Leo Trudel",
           "children": [
             {
@@ -104,7 +44,16 @@
     {
       "name": "uncharged",
       "children": [
-
+        {
+          "name": "Leo Trudel",
+          "children": [
+            {
+              "name": "burrito visions",
+              "amount": 11,
+              "size": 1
+            }
+          ]
+        }
       ]
     }
   ]

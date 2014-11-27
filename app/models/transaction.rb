@@ -39,13 +39,30 @@ class Transaction
     end
   end
 
-  def self.calculate_score(settled_value, pending_value, uncharged_count, settled_ratio, user_settled_count)
-    settled_score = ((settled_value-User.minimum("settled_value"))/(User.maximum("settled_value")-User.minimum("settled_value")))* 20
-    pending_score = (1-(pending_value-User.minimum("pending_value")/(User.maximum("pending_value")-User.minimum("pending_value"))))* 15
-    uncharged_score = (uncharged_count-User.minimum("uncharged_count").to_f/(User.maximum("uncharged_count")-User.minimum("uncharged_count")))*15
-    payback_score = ((settled_ratio-User.minimum("settled_ratio"))/(User.maximum("settled_ratio")-User.minimum("settled_ratio")))* 25
-    transaction_score = ((user_settled_count-User.minimum("settled_count")).to_f/(User.maximum("settled_count")-User.minimum("settled_count")))* 20
-    venmo_score = settled_score + pending_score + uncharged_score + payback_score + transaction_score + 5
+  def self.calculate_score(settled_value, pending_value, uncharged_count, settled_ratio, settled_count)
+    
+    settled_value_min   = User.minimum("settled_value")
+    settled_value_max   = User.maximum("settled_value")
+    pending_value_min   = User.minimum("pending_value")
+    pending_value_max   = User.maximum("pending_value")
+    uncharged_count_min = User.minimum("uncharged_count")
+    uncharged_count_max = User.maximum("uncharged_count")
+    settled_ratio_min   = User.minimum("settled_ratio")
+    settled_ratio_max   = User.maximum("settled_ratio")
+    settled_count_min   = User.minimum("settled_count")
+    settled_count_max   = User.maximum("settled_count")
+
+    settled_score       = eval(get_base_score("settled_value")) * 20
+    pending_score       = ( 1 - eval(get_base_score("pending_value")) ) * 15
+    uncharged_score     = eval(get_base_score("uncharged_count")) * 15
+    payback_score       = eval(get_base_score("settled_ratio")) * 25
+    transaction_score   = eval(get_base_score("settled_count")) * 20
+    
+    venmo_score = [settled_score, pending_score, uncharged_score, payback_score, transaction_score, 5].sum
+  end
+
+  def self.get_base_score(el)
+    "(#{el} - #{el}_min) / (#{el}_max - #{el}_min)"
   end
 
 end

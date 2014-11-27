@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
     ### TESTING
     # JSON.parse(IO.read("app/test_data/kana_data.json"))
     JSON.parse(IO.read("app/test_data/ben_data.json"))
-    #JSON.parse(IO.read("app/test_data/nate_data.json"))
+    # JSON.parse(IO.read("app/test_data/nate_data.json"))
   end
 
   def parse_info(payment_info)
@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
     counts = [settled_count, pending_count, uncharged_count]
 
     ratios = Transaction.get_ratios(*values, *times)
-    venmo_score = Transaction.calculate_score(settled_value, pending_value, uncharged_count, settled_ratio, settled_count)
+    venmo_score = Transaction.calculate_score(settled_value, pending_value, uncharged_count, ratios[:settled], settled_count)
 
     self.update(
       settled_value: settled_value, 
@@ -78,7 +78,7 @@ class User < ActiveRecord::Base
   end
 
   def getLetterGrade(score)
-    if score = 100
+    if score == 100
       'A+'
     elsif score >= 94
       'A'
