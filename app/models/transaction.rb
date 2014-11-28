@@ -43,6 +43,7 @@ class Transaction
     settled_score = ((settled_value-User.minimum("settled_value"))/(User.maximum("settled_value")-User.minimum("settled_value")))* 20
     pending_score = (1-(pending_value-User.minimum("pending_value")/(User.maximum("pending_value")-User.minimum("pending_value"))))* 15
     uncharged_score = (uncharged_count-User.minimum("uncharged_count").to_f/(User.maximum("uncharged_count")-User.minimum("uncharged_count")))*15
+    binding.pry
     payback_score = ((settled_ratio-User.minimum("settled_ratio"))/(User.maximum("settled_ratio")-User.minimum("settled_ratio")))* 25
     transaction_score = ((user_settled_count-User.minimum("settled_count")).to_f/(User.maximum("settled_count")-User.minimum("settled_count")))* 20
     venmo_score = settled_score + pending_score + uncharged_score + payback_score + transaction_score + 5
