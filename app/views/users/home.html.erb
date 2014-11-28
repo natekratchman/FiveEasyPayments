@@ -20,7 +20,7 @@
             <div class="container">
               <div class="section-title">
                   <h2 class="title animatez" data-effect="fadeInDown">YOUR VENMO SCORE</h2>
-                  <h4 class="title animatez" data-effect="fadeInUp"><span class="main-color">A+</span></h4>
+                  <h4 class="title animatez" data-effect="fadeInUp"><span class="main-color"><%= @current_user.getLetterGrade(@current_user.venmo_score) %></span></h4>
               </div>
               <div id='' class="animatez" data-effect="fadeInUp"></div>
             </div>

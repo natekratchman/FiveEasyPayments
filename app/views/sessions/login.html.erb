@@ -4,7 +4,7 @@ BEGIN HERO -->
         <div class="header-center fade-in">
             <h1>Five Easy Payments</h1>
             <p>Your Venmo Credit Score</p>
-            <p><a class="sscroll slider-more" href="#about"><i class="fa fa-angle-down"></i></a></p>
+            <%= button_to "Login with Venmo", '/authenticate', method: "get", class: "btn btn-default", style: "margin-top: 20px;" %>
         </div>
     </div>
     <div class="fullfilter"></div>
