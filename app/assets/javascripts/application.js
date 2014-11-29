@@ -12,28 +12,4 @@
 //
 //= require jquery-1.10.2
 //= require_tree .
-//
-//= require bootstrap
-//= require html5shiv
-//= require main
-//
-//= require Chart.min
-//= require d3.v3.min
-//= require tipsy
-//
-//= require lib/grid
-//= require lib/jquery.backgroundvideo
-//= require lib/jquery.backstretch.min
-//= require lib/jquery.backtotop
-//= require lib/jquery.countdown
-//= require lib/jquery.countTo
-//= require lib/jquery.fitvid
-//= require lib/jquery.parallax
-//= require lib/jquery.smooth-scroll.min
-//= require lib/jquery.sudoslider.min
-//= require lib/jquery.superslides.min
-//= require lib/masonry.pkgd.min
-//= require lib/mediaelement.min
-//= require lib/venobox.min
-//= require lib/waypoints
-//= require lib/waypoints.min
+//= require_tree ../../../vendor/assets/javascripts
