@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
 
     ### TESTING
     # JSON.parse(IO.read("app/test_data/kana_data.json"))
-    JSON.parse(IO.read("app/test_data/ben_data.json"))
-    # JSON.parse(IO.read("app/test_data/nate_data.json"))
+    # JSON.parse(IO.read("app/test_data/ben_data.json"))
+    JSON.parse(IO.read("app/test_data/nate_data.json"))
   end
 
   def parse_info(payment_info)

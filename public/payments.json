@@ -5,11 +5,31 @@
       "name": "settled",
       "children": [
         {
-          "name": "Leo Trudel",
+          "name": "Eitan Rosenberg",
           "children": [
             {
-              "name": "Twc",
-              "amount": 56.34,
+              "name": "Internet - November",
+              "amount": 15.28,
+              "size": 1
+            },
+            {
+              "name": "Con Ed - November",
+              "amount": 57,
+              "size": 1
+            },
+            {
+              "name": "Electricity - Oct",
+              "amount": 50.39,
+              "size": 1
+            },
+            {
+              "name": "Internet - Oct",
+              "amount": 31.87,
+              "size": 1
+            },
+            {
+              "name": "Con Ed / Aug 14",
+              "amount": 51.3,
               "size": 1
             }
           ]
@@ -19,37 +39,48 @@
     {
       "name": "pending",
       "children": [
-        {
-          "name": "Kana Abe",
-          "children": [
-            {
-              "name": "App testing",
-              "amount": 0.01,
-              "size": 1
-            }
-          ]
-        },
-        {
-          "name": "Nate Kratchman",
-          "children": [
-            {
-              "name": "for testing!",
-              "amount": 0.01,
-              "size": 1
-            }
-          ]
-        }
+
       ]
     },
     {
       "name": "uncharged",
       "children": [
         {
-          "name": "Leo Trudel",
+          "name": "Benjamin Hochron",
           "children": [
             {
-              "name": "burrito visions",
-              "amount": 11,
+              "name": "Ping Pong!",
+              "amount": 10,
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Elana Reinholtz",
+          "children": [
+            {
+              "name": "BBQ!!!",
+              "amount": 20,
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "William Miner",
+          "children": [
+            {
+              "name": "for September reimburse",
+              "amount": 1400,
+              "size": 1
+            }
+          ]
+        },
+        {
+          "name": "Matt Green",
+          "children": [
+            {
+              "name": "The honorable General Tso",
+              "amount": 12,
               "size": 1
             }
           ]
