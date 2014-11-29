@@ -28,17 +28,17 @@ BEGIN HERO -->
               <!-- BEGIN TWITTER SHARE -->
               <div class="animatez" data-effect="fadeInUp">
                 <a class="twitter-share-button" href="https://twitter.com/share"
-              data-url="http://fiveeasypayments.herokuapp.com"
-              data-size="large"
-              data-count="none"
-              <% if @current_user.venmo_score >= 93 %>
-              data-text="I scored an <%= score %> on #FiveEasyPayments. You can trust me. What's your #VenmoCreditScore?"
-              <% elsif @current_user.venmo_score >= 83 %>
-              data-text="I scored a <%= score %> on #FiveEasyPayments. You can trust me. What's your #VenmoCreditScore?"
-              <% else %>
-              data-text="I scored a <%= score %> on #FiveEasyPayments. You should think twice before lending me money. What's your #VenmoCreditScore?"
-              <% end %>
-              > Share your score </a>
+                data-url="http://fiveeasypayments.herokuapp.com"
+                data-size="large"
+                data-count="none"
+                <% if @current_user.venmo_score >= 93 %>
+                data-text="I scored an <%= score %> on #FiveEasyPayments. You can trust me. What's your #VenmoCreditScore?"
+                <% elsif @current_user.venmo_score >= 83 %>
+                data-text="I scored a <%= score %> on #FiveEasyPayments. You can trust me. What's your #VenmoCreditScore?"
+                <% else %>
+                data-text="I scored a <%= score %> on #FiveEasyPayments. You should think twice before lending me money. What's your #VenmoCreditScore?"
+                <% end %>
+                > Share your score </a>
               </div>
             <!-- END TWITTER SHARE -->
 
