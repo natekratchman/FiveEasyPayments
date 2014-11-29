@@ -1,4 +1,4 @@
-<!-- BEGIN HERO -->
+BEGIN HERO -->
 <div class="home-wrapper" id="top">
     <div class="content-home-wrapper text-center">
         <div class="header-center fade-in">
@@ -20,9 +20,28 @@
             <div class="container">
               <div class="section-title">
                   <h2 class="title animatez" data-effect="fadeInDown">YOUR VENMO SCORE</h2>
-                  <h4 class="title animatez" data-effect="fadeInUp"><span class="main-color"><%= @current_user.getLetterGrade(@current_user.venmo_score) %></span></h4>
+                  <% score = @current_user.getLetterGrade(@current_user.venmo_score) %>
+                  <h4 class="title animatez" data-effect="fadeInUp"><span class="main-color"><%= score %></span></h4>
               </div>
-              <div id='' class="animatez" data-effect="fadeInUp"></div>
+              <div class="spacer small"></div>
+              
+              <!-- BEGIN TWITTER SHARE -->
+              <div class="animatez" data-effect="fadeInUp">
+                <a class="twitter-share-button" href="https://twitter.com/share"
+                data-url="http://fiveeasypayments.herokuapp.com"
+                data-size="large"
+                data-count="none"
+                <% if @current_user.venmo_score >= 93 %>
+                data-text="I scored an <%= score %> on #FiveEasyPayments. You can trust me. What's your #VenmoCreditScore?"
+                <% elsif @current_user.venmo_score >= 83 %>
+                data-text="I scored a <%= score %> on #FiveEasyPayments. You can trust me. What's your #VenmoCreditScore?"
+                <% else %>
+                data-text="I scored a <%= score %> on #FiveEasyPayments. You should think twice before lending me money. What's your #VenmoCreditScore?"
+                <% end %>
+                > Share your score </a>
+              </div>
+            <!-- END TWITTER SHARE -->
+
             </div>
           </div>
           <!-- END VENMO SCORE -->
@@ -103,9 +122,8 @@
 <div class="section-fill bg-parallax bg-about">
     <div style="padding: 50px">
         <div class="section-title">
-          <h2>Made with <span class="">♥</span> 
-            at <a href="http://flatironschool.com" target="_blank">Flatiron</a></h2>
+          <h2>Made with <span class="">♥</span> at <a href="http://flatironschool.com" target="_blank">Flatiron</a></h2>
         </div>
     </div>
 </div>       
-<!-- END MADE WITH LOVE -->
+<!-- END MADE WITH LOVE
