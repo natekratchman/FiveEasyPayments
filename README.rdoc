@@ -1,28 +1,3 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Five Easy Payments is a Rails app that calculates a user's Venmo "credit score" and visually informs him/her of their peer payment statistics. Venmo is a tool used to pay and charge friends for anything from a sandwich to this month's rent. Five Easy Payments graphically informs a user's peers how likely and how quickly he/she is to repay a charge based on the user's payment history.
