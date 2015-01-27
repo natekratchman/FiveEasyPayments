@@ -57,7 +57,6 @@ class Transaction
     uncharged_score     = eval(get_base_score("uncharged_count")) * 15
     payback_score       = eval(get_base_score("settled_ratio")) * 25
     transaction_score   = eval(get_base_score("settled_count")) * 20
-    
     venmo_score = [settled_score, pending_score, uncharged_score, payback_score, transaction_score, 5].sum
   end
 
